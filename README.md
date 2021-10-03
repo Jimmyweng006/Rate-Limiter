@@ -1,22 +1,21 @@
 # Rate Limiter
 
 ## description
----
 
 實作一個middleware
 * 限制每小時來自同一個 IP 的請求數量不得超過 1000
 * 在 response headers 中加入剩餘的請求數量 (X-RateLimit-Remaining) 以及 rate limit 歸零的時間 (X-RateLimit-Reset)
 * 如果超過限制的話就回傳 429 (Too Many Requests)
----
+
 ## TL;DR
 
 * uses **gin** middleware and **redis** to record the remain requests and reset time.
----
+
 ## 使用的技術
 
 * language：Go
 * DB：redis
----
+
 ## 實作的過程
 
 1. 怎麼模擬不同用戶的request，先搞定一個ip就好，略
